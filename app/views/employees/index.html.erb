@@ -1,15 +1,15 @@
 <h1>Employees</h1>
 
-<table>
-  <thead>
+<table class="table table-responsive table-striped table-borderless">
+  <thead class="thead-dark">
     <tr>
       <th>Shop</th>
       <th>First name</th>
       <th>Last name</th>
+      <th>Authority</th>
+      <th>Email</th>
       <th>Contact</th>
       <th>Address</th>
-      <th>Email</th>
-      <th>Employee type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,13 +20,13 @@
         <td><%= employee.shop_id %></td>
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
+        <td><%= employee.employee_type %></td>
+        <td><%= employee.email %></td>
         <td><%= employee.contact %></td>
         <td><%= employee.address %></td>
-        <td><%= employee.email %></td>
-        <td><%= employee.employee_type %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><i class="fa fa-home" aria-hidden="true"></i><%= link_to 'Show', employee, class:"btn btn-sm btn-secondary text-white" %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee), class:"btn btn-sm btn-secondary text-white" %></td>
+        <td><%= link_to 'Delete', employee, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-sm btn-secondary text-white" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Employee', new_employee_path %>
+<%= link_to 'New Employee', new_employee_path, class:"btn btn-secondary text-white" %>

@@ -1,37 +1,14 @@
-<p>
-  <strong>Shop:</strong>
-  <%= @employee.shop_id %>
-</p>
-
-<p>
-  <strong>First name:</strong>
-  <%= @employee.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @employee.last_name %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @employee.contact %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @employee.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @employee.email %>
-</p>
-
-<p>
-  <strong>Employee type:</strong>
-  <%= @employee.employee_type %>
-</p>
-
-<%= link_to 'Edit', edit_employee_path(@employee) %> |
-<%= link_to 'Back', employees_path %>
+<div class="jumbotron">
+  <h1 class="display-4"><%= @employee.last_name %>, <%= @employee.first_name %></h1>
+  <p class="lead">
+    <%= @employee.employee_type %>
+  </p>
+  <p>
+    <%= @employee.email %> | <%= @employee.contact %>
+  </p>
+  <p>
+    <%= @employee.address %>
+  </p>
+  <%= link_to 'Edit', edit_employee_path(@employee), class:"btn btn-secondary text-white" %>
+  <%= link_to 'Back', employees_path, class:"btn btn-dark text-white" %>
+</div>
