@@ -1,0 +1,31 @@
+<h1>Shops</h1>
+
+<table class="table table-borderless table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>Employee</th>
+      <th>Shop name</th>
+      <th>Plan</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shops.each do |shop| %>
+      <tr>
+        <td><%= shop.employee_id %></td>
+        <td><%= shop.shop_name %></td>
+        <td><%= shop.plan %></td>
+        <td>
+          <%= link_to 'Show', shop, class:"btn btn-secondary btn-sm text-white" %>
+          <%= link_to 'Edit', edit_shop_path(shop), class:"btn btn-secondary btn-sm text-white" %>
+        <%= link_to 'Delete', shop, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-secondary btn-sm text-white" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shop', new_shop_path, class:"btn btn-secondary text-white" %>

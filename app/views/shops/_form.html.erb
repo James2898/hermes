@@ -1,0 +1,48 @@
+<%= form_with(model: shop, local: true) do |form| %>
+  <% if shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
+
+      <ul>
+        <% shop.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :shop_name %>
+    <%= form.text_field :shop_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plan %>
+    <%= form.select(:plan,[["Disabled",0],["Trial",1],["Basic",2],["Premium",3]], {}, {:class => "form-control"}) %>
+  </div>
+
+<% if shop.new_record? %>
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+<% end %>
+  <div class="actions">
+    <%= form.submit "Submit", class:"btn btn-secondary" %>
+  </div>
+<% end %>

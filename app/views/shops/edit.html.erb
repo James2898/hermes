@@ -1,0 +1,10 @@
+<%= link_to 'Back', shops_path, class:"btn btn-dark text-white" %>
+
+<div class="card my-1">
+    <div class="card-header bg-dark text-white">
+        <h1>Shop Edit</h1>
+    </div>
+    <div class="card-body">
+        <%= render 'form', shop: @shop %>
+    </div>
+</div>

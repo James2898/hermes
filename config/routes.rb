@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :employees
+  resources :shops
   resources :employees
   devise_scope :employee do
     authenticated :employee do
